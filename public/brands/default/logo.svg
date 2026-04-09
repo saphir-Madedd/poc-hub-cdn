@@ -1,0 +1,6 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="96" height="96" rx="24" fill="#8FBE3F"/>
+  <circle cx="48" cy="48" r="28" fill="#F3F9E2"/>
+  <path d="M31 62L48 27L65 62H57L52.5 53H43.5L39 62H31Z" fill="#699F11"/>
+  <text x="48" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#699F11">DEF</text>
+</svg>

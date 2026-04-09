@@ -1,0 +1,6 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="96" height="96" rx="24" fill="#0F7EA8"/>
+  <circle cx="48" cy="48" r="28" fill="#DBF2FB"/>
+  <path d="M29 62L39 28H57L67 62H58L56 54H40L38 62H29ZM42.5 46H53.5L48 33L42.5 46Z" fill="#0B5E7D"/>
+  <text x="48" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0B5E7D">ACM</text>
+</svg>
