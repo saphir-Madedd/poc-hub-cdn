@@ -6,12 +6,19 @@ function sanitizeClient(value: string) {
   return sanitized || DEFAULT_CLIENT;
 }
 
+//FULL DOMAIN FUTURE IMPLEMENTATION
+
 export function getClientFromHost(host: string | null | undefined) {
   if (!host) return DEFAULT_CLIENT;
 
   const hostname = host.split(":")[0]?.trim().toLowerCase();
 
-  if (!hostname || hostname === "localhost" || hostname === "127.0.0.1" || hostname === "[::1]") {
+  if (
+    !hostname ||
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname === "[::1]"
+  ) {
     return DEFAULT_CLIENT;
   }
 
@@ -66,3 +73,19 @@ export function getLogoUrl({
 
   return `${CDN_BASE_URL}/brands/${client}/logo.svg`;
 }
+
+export function getMediaUrl({
+  client,
+  host,
+}: {
+  client: string;
+  host: string | null | undefined;
+}) {
+  if (isLocalSimulationHost(host)) {
+    return `/brands/${client}/media.png`;
+  }
+
+  return `${CDN_BASE_URL}/brands/${client}/media.png`;
+}
+
+//TO DO : URL CONFIG FILE MARK= SUB -- domain

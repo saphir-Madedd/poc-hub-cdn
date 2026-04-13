@@ -1,3 +1,5 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --bg-primary: 255, 255, 255;
   --bg-primary-hover: 252, 252, 247;
@@ -120,4 +122,123 @@
   --system-card-hover-background: #f8fde8;
   --system-card-add-border: #d4ee90;
   --system-card-add-icon: #699f11;
+  --lms-bg-footer: #e7e7e7;
+}
+
+.dark {
+  /* Base backgrounds */
+  --bg-primary: 20, 26, 18;
+  --bg-primary-hover: 28, 36, 24;
+  --bg-primary-solid: 126, 169, 52;
+  --bg-secondary: 28, 36, 24;
+  --bg-quaternary: 36, 46, 30;
+  --bg-disabled: 36, 46, 30;
+  --bg-disabled-subtle: 42, 54, 36;
+  --bg-overlay: 0, 0, 0;
+
+  /* Brand */
+  --bg-brand-primary: 143, 190, 63;
+  --bg-brand-primary-hover: 170, 215, 90;
+  --bg-brand-secondary: 28, 36, 24;
+  --bg-brand-solid: 143, 190, 63;
+  --bg-brand-solid-hover: 170, 215, 90;
+
+  /* Error */
+  --bg-error-primary: 240, 68, 56;
+  --bg-error-solid: 217, 45, 32;
+
+  /* Text */
+  --text-primary: 235, 245, 225;
+  --text-secondary: 200, 220, 180;
+  --text-tertiary: 170, 190, 150;
+  --text-placeholder-subtle: 130, 150, 115;
+  --text-primary-on-brand: 255, 255, 255;
+  --text-brand-primary: 190, 230, 120;
+  --text-brand-secondary: 170, 215, 100;
+  --text-brand-tertiary: 200, 230, 150;
+  --text-error-primary: 255, 120, 110;
+  --text-white: 255, 255, 255;
+
+  /* Foreground */
+  --fg-primary: 235, 245, 225;
+  --fg-secondary: 200, 220, 180;
+  --fg-tertiary: 170, 190, 150;
+  --fg-quaternary: 130, 150, 115;
+  --fg-disabled: 100, 120, 90;
+  --fg-disabled-subtle: 70, 90, 60;
+
+  /* Borders */
+  --border-primary: 70, 90, 60;
+  --border-brand: 143, 190, 63;
+  --border-brand-alt: 170, 215, 90;
+  --border-disabled: 70, 90, 60;
+  --border-error: 180, 35, 24;
+  --border-error-subtle: 120, 40, 35;
+
+  /* Semantic */
+  --background: #141a12;
+  --foreground: #ebf5e1;
+
+  --card: #1c2418;
+  --card-foreground: #ebf5e1;
+
+  --popover: #1c2418;
+  --popover-foreground: #ebf5e1;
+
+  --primary: #8fbe3f;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1f2a1b;
+  --secondary-foreground: #bfe67a;
+
+  --muted: #24301f;
+  --muted-foreground: #a0b893;
+
+  --accent: #2c3826;
+  --accent-foreground: #c8f08a;
+
+  --border: #465c3a;
+  --input: #465c3a;
+  --ring: #b5d766;
+
+  /* Charts */
+  --chart-1: #b5d766;
+  --chart-2: #dceab9;
+  --chart-3: #7b848e;
+  --chart-4: #c8f08a;
+  --chart-5: #99a1aa;
+
+  /* Sidebar */
+  --sidebar: #182015;
+  --sidebar-foreground: #ebf5e1;
+  --sidebar-primary: #8fbe3f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #24301f;
+  --sidebar-accent-foreground: #ebf5e1;
+  --sidebar-border: #465c3a;
+  --sidebar-ring: #b5d766;
+
+  /* External cards */
+  --external-app-card-background: #1c2418;
+  --external-app-card-border: #465c3a;
+  --external-app-card-title: #ebf5e1;
+  --external-app-card-logo: #bfe67a;
+  --external-app-card-logo-placeholder: #a0b893;
+  --external-app-card-hover-background: #24301f;
+  --external-app-card-hover-border: #5f7a4f;
+
+  /* System cards */
+  --system-card-background: #1c2418;
+  --system-card-border: #8fbe3f;
+  --system-card-title: #bfe67a;
+  --system-card-icon: #b5d766;
+  --system-card-arrow-border: #465c3a;
+  --system-card-arrow-icon: #bfe67a;
+  --system-card-arrow-background: #141a12;
+  --system-card-hover-background: #24301f;
+  --system-card-add-border: #465c3a;
+  --system-card-add-icon: #b5d766;
+
+  /* Footer */
+  --lms-bg-footer: #10150f;
 }
