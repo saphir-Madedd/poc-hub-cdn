@@ -8,6 +8,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { getClientFromHost, getLogoUrl, getThemeCssUrl } from "@/lib/branding";
 
 import SideBarTest from "@/components/SideBarTest";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -32,24 +33,27 @@ export default async function RootLayout({
 
   return (
     <html
+      suppressHydrationWarning
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}  h-full antialiased`}
       data-client={client}
     >
       <head>
         <link key={themeCssUrl} rel="stylesheet" href={themeCssUrl} />
       </head>
       <body className="h-full ">
-        <TooltipProvider delayDuration={0}>
-          <SidebarProvider defaultOpen={false}>
-            <div className="relative flex w-full bg-background">
-              <SideBarTest logoUrl={logoUrl} />
-              <SidebarInset className="flex-1 bg-background">
-                {children}
-              </SidebarInset>
-            </div>
-          </SidebarProvider>
-        </TooltipProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TooltipProvider delayDuration={0}>
+            <SidebarProvider defaultOpen={false}>
+              <div className="relative flex w-full bg-background">
+                <SideBarTest logoUrl={logoUrl} />
+                <SidebarInset className="flex-1 bg-background">
+                  {children}
+                </SidebarInset>
+              </div>
+            </SidebarProvider>
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

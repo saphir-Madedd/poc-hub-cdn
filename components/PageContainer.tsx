@@ -1,12 +1,14 @@
 "use client";
 
 import { AppsCards } from "./apps-card";
+import DarkSwitcher from "./DarkSwitcher";
 import { SystemCards } from "./system-cards";
 import Image from "next/image";
 
 export default function PageContainer({ mediaUrl }: { mediaUrl: string }) {
   return (
     <div className="flex flex-1 flex-col text-lms-text-brand-secondary items-center justify-center font-sans">
+      <DarkSwitcher />
       <section className="flex justify-between items-center w-full pt-30 pl-40 pr-20">
         <div className="w-135.75">
           <h1 className="font-bold  text-display-xl">

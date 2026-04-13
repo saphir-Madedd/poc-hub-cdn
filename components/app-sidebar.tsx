@@ -29,7 +29,7 @@ export function AppSidebar({ client, logoUrl }: AppSidebarProps) {
             alt={`${client} logo`}
             width={32}
             height={32}
-            className="h-full w-full object-contain"
+            className=" h-8 w-8 object-contain"
           />
         </div>
       </SidebarHeader>
