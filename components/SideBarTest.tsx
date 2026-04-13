@@ -7,7 +7,6 @@ export default function SideBarTest({ logoUrl }: { logoUrl: string }) {
   return (
     <div className="fixed top-4 left-5 z-40 ">
       <AppSidebar
-        className="dark:bg-[#181D27]! max-h-[calc(100vh-40px)]!"
         defaultOpen={false}
         logoSrc={logoUrl}
         primaryNav={[

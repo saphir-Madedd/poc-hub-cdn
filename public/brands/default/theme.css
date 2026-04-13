@@ -1,5 +1,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
-
+@import "@jade-innovation/template-design/style.css";
+@source "../node_modules/@jade-innovation/template-design/dist/index.js";
 :root {
   --bg-primary: 255, 255, 255;
   --bg-primary-hover: 252, 252, 247;

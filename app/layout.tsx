@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
+import "@jade-innovation/template-design/style.css";
+import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+
 import { getClientFromHost, getLogoUrl, getThemeCssUrl } from "@/lib/branding";
 
 import SideBarTest from "@/components/SideBarTest";
@@ -44,14 +45,11 @@ export default async function RootLayout({
       <body className="h-full ">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider delayDuration={0}>
-            <SidebarProvider defaultOpen={false}>
-              <div className="relative flex w-full bg-background">
-                <SideBarTest logoUrl={logoUrl} />
-                <SidebarInset className="flex-1 bg-background">
-                  {children}
-                </SidebarInset>
-              </div>
-            </SidebarProvider>
+            <div className="relative flex w-full bg-background">
+              <SideBarTest logoUrl={logoUrl} />
+
+              {children}
+            </div>
           </TooltipProvider>
         </ThemeProvider>
       </body>

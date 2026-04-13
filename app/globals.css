@@ -1,8 +1,24 @@
+@import "@jade-innovation/template-design/style.css";
+@source "../node_modules/@jade-innovation/template-design/dist/index.js";
+@source "../node_modules/@jade-innovation/template-design/dist";
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* 2. Ensure your custom hex colors are registered as theme variables if needed */
+@theme {
+  --color-sidebar-dark: #181d27;
+  --color-sidebar-text: #a0a6ad;
+}
+
+/* 3. Global fix for the height/border issues */
+@layer base {
+  :root {
+    --sidebar-width: 264px;
+  }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
