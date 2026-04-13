@@ -1,7 +1,7 @@
 "use client";
 
 import { AppSidebar } from "@jade-innovation/template-design";
-import { Home } from "lucide-react";
+import { Home, User } from "lucide-react";
 
 export default function SideBarTest({ logoUrl }: { logoUrl: string }) {
   return (
@@ -14,6 +14,12 @@ export default function SideBarTest({ logoUrl }: { logoUrl: string }) {
             id: "home",
             icon: <Home className="h-5 w-5" />,
             label: "Accueil",
+            isActive: true,
+          },
+          {
+            id: "user",
+            icon: <User className="h-5 w-5" />,
+            label: "User",
             isActive: true,
           },
         ]}

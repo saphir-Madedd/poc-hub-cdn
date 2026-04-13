@@ -23,6 +23,7 @@ export default function PageContainer({ mediaUrl }: { mediaUrl: string }) {
           alt="media"
           height={524}
           width={700}
+          loading="eager"
           className="h-131 w-175 object-cover object-center aspect-square"
         />
       </section>
