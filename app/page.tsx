@@ -3,19 +3,16 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/auth";
 import { headers } from "next/headers";
-import { getClientFromHost, getMediaUrl } from "@/lib/branding";
+import { getUrls } from "@/lib/utils";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
   const requestHeaders = await headers();
-  const host =
-    requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
-  const client = getClientFromHost(host);
-  const mediaUrl = getMediaUrl({ client, host });
+  const { mediaUrl } = await getUrls(requestHeaders);
 
   if (!session) {
     redirect("/api/auth/signin/keycloak");
   }
 
-  return <PageContainer session={session} mediaUrl={mediaUrl} />;
+  return <PageContainer mediaUrl={mediaUrl} />;
 }

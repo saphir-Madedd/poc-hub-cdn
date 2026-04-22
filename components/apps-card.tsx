@@ -21,12 +21,6 @@ interface AppCard {
   bgColor: string;
 }
 
-const LogoPlaceholder = ({ name }: { name: string }) => (
-  <div className="flex h-12 w-18 items-center justify-center rounded-md border border-dashed border-external-app-card-border px-2 text-[10px] font-medium uppercase tracking-[0.08em] text-external-app-card-logo-placeholder">
-    {name}
-  </div>
-);
-
 const appCards: AppCard[] = [
   {
     id: "eurecia",
@@ -75,15 +69,18 @@ const appCards: AppCard[] = [
 
 interface AppCardItemProps {
   card: AppCard;
-  className?: string;
+  classNames?: string;
 }
 
-function AppCardItem({ card, className }: AppCardItemProps) {
+function AppCardItem({ card, classNames }: AppCardItemProps) {
   return (
     <Link
       style={{ backgroundColor: card.bgColor }}
       href={card.href}
-      className="h-33.75 w-33.75 rounded-xl p-5 flex-col text-white  flex items-center justify-between"
+      className={cn(
+        "h-33.75 w-33.75 rounded-xl p-5 flex-col text-white  flex items-center justify-between",
+        classNames,
+      )}
     >
       {card.logo}
       <span className="first-letter:uppercase">{card.name}</span>

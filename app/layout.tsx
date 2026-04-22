@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
-
 import "@jade-innovation/template-design/style.css";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
-
-import { getClientFromHost, getLogoUrl, getThemeCssUrl } from "@/lib/branding";
-
-import SideBarTest from "@/components/SideBarTest";
+import SideBar from "@/components/SideBar";
 import { ThemeProvider } from "next-themes";
+import { getUrls } from "@/lib/utils";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -26,11 +23,7 @@ export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const requestHeaders = await headers();
-  const host =
-    requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
-  const client = getClientFromHost(host);
-  const themeCssUrl = getThemeCssUrl({ client, host });
-  const logoUrl = getLogoUrl({ client, host });
+  const { themeCssUrl, logoUrl, client } = await getUrls(requestHeaders);
 
   return (
     <html
@@ -46,7 +39,7 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider delayDuration={0}>
             <div className="relative flex w-full bg-background">
-              <SideBarTest logoUrl={logoUrl} />
+              <SideBar logoUrl={logoUrl} />
 
               {children}
             </div>
