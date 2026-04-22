@@ -1,12 +1,24 @@
 "use client";
 
+import {
+  Euricia,
+  Logitricks,
+  Mfiles,
+  Netexplorer,
+  Odoo,
+  Salesforce,
+  Sellsy,
+} from "@/lib/icons";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { ReactElement } from "react";
 
 interface AppCard {
   id: string;
   name: string;
-  logo?: React.ReactNode;
-  href?: string;
+  logo?: ReactElement;
+  href: string;
+  bgColor: string;
 }
 
 const LogoPlaceholder = ({ name }: { name: string }) => (
@@ -16,13 +28,49 @@ const LogoPlaceholder = ({ name }: { name: string }) => (
 );
 
 const appCards: AppCard[] = [
-  { id: "eurecia", name: "EURECIA", href: "#" },
-  { id: "sellsy", name: "SELLSY", href: "#" },
-  { id: "m-files", name: "M-FILES", href: "#" },
-  { id: "salesforce", name: "SALESFORCE", href: "#" },
-  { id: "odoo", name: "ODOO", href: "#" },
-  { id: "netexplorer", name: "NETEXPLORER", href: "#" },
-  { id: "logitricks", name: "LOGITRICKS", href: "#" },
+  {
+    id: "eurecia",
+    name: "EURECIA",
+    href: "#",
+    logo: <Euricia />,
+    bgColor: "#323232",
+  },
+  {
+    id: "sellsy",
+    name: "SELLSY",
+    href: "#",
+    logo: <Sellsy />,
+    bgColor: "#02016F",
+  },
+  {
+    id: "m-files",
+    name: "M-FILES",
+    href: "#",
+    logo: <Mfiles />,
+    bgColor: "#338BF2",
+  },
+  {
+    id: "salesforce",
+    name: "SALESFORCE",
+    href: "#",
+    logo: <Salesforce />,
+    bgColor: "#00A1E0",
+  },
+  { id: "odoo", name: "ODOO", href: "#", logo: <Odoo />, bgColor: "#9C5789" },
+  {
+    id: "netexplorer",
+    name: "NETEXPLORER",
+    href: "#",
+    logo: <Netexplorer />,
+    bgColor: "#EA4643",
+  },
+  {
+    id: "logitricks",
+    name: "LOGITRICKS",
+    href: "#",
+    logo: <Logitricks />,
+    bgColor: "#252B37",
+  },
 ];
 
 interface AppCardItemProps {
@@ -32,23 +80,14 @@ interface AppCardItemProps {
 
 function AppCardItem({ card, className }: AppCardItemProps) {
   return (
-    <a
+    <Link
+      style={{ backgroundColor: card.bgColor }}
       href={card.href}
-      className={cn(
-        "group flex h-33 w-33 flex-col items-center shadow-sm justify-center gap-5 rounded-2xl border bg-external-app-card-background px-4 py-5 text-center",
-        "border-external-app-card-border",
-        "transition-all duration-200  hover:border-external-app-card-hover-border hover:shadow-md",
-        className,
-      )}
+      className="h-33.75 w-33.75 rounded-xl p-5 flex-col text-white  flex items-center justify-between"
     >
-      <div className="flex h-12 items-center justify-center text-external-app-card-logo">
-        {card.logo ?? <LogoPlaceholder name={card.name} />}
-      </div>
-
-      <span className="text-[12px] font-bold uppercase leading-none text-external-app-card-title">
-        {card.name}
-      </span>
-    </a>
+      {card.logo}
+      <span className="first-letter:uppercase">{card.name}</span>
+    </Link>
   );
 }
 
@@ -58,7 +97,7 @@ interface AppsCardsProps {
 
 export function AppsCards({ className }: AppsCardsProps) {
   return (
-    <div className={cn("flex flex-wrap gap-4", className)}>
+    <div className={cn("flex flex-wrap gap-6", className)}>
       {appCards.map((card) => (
         <AppCardItem key={card.id} card={card} />
       ))}

@@ -1,3 +1,6 @@
+@custom-variant dark (&:where(.dark, .dark *));
+@import "@jade-innovation/template-design/style.css";
+@source "../node_modules/@jade-innovation/template-design/dist/index.js";
 :root {
   --bg-primary: 255, 255, 255;
   --bg-primary-hover: 242, 251, 255;
@@ -120,4 +123,122 @@
   --system-card-hover-background: #eef9fd;
   --system-card-add-border: #bde2f1;
   --system-card-add-icon: #0f7ea8;
+  --lms-bg-footer: #036f8b;
+}
+
+.dark {
+  /* Base backgrounds */
+  --bg-primary: 13, 31, 41;
+  --bg-primary-hover: 18, 40, 52;
+  --bg-primary-solid: 11, 94, 125;
+  --bg-secondary: 18, 40, 52;
+  --bg-quaternary: 22, 50, 65;
+  --bg-disabled: 22, 50, 65;
+  --bg-disabled-subtle: 26, 58, 75;
+  --bg-overlay: 0, 0, 0;
+
+  /* Brand */
+  --bg-brand-primary: 15, 126, 168;
+  --bg-brand-primary-hover: 20, 150, 200;
+  --bg-brand-secondary: 18, 40, 52;
+  --bg-brand-solid: 15, 126, 168;
+  --bg-brand-solid-hover: 20, 150, 200;
+
+  /* Error */
+  --bg-error-primary: 240, 68, 56;
+  --bg-error-solid: 217, 45, 32;
+
+  /* Text */
+  --text-primary: 230, 245, 250;
+  --text-secondary: 180, 210, 220;
+  --text-tertiary: 140, 180, 195;
+  --text-placeholder-subtle: 100, 140, 160;
+  --text-primary-on-brand: 255, 255, 255;
+  --text-brand-primary: 90, 190, 230;
+  --text-brand-secondary: 120, 200, 230;
+  --text-brand-tertiary: 150, 210, 235;
+  --text-error-primary: 255, 120, 110;
+  --text-white: 255, 255, 255;
+
+  /* Foreground (icons etc.) */
+  --fg-primary: 230, 245, 250;
+  --fg-secondary: 180, 210, 220;
+  --fg-tertiary: 140, 180, 195;
+  --fg-quaternary: 100, 140, 160;
+  --fg-disabled: 90, 120, 135;
+  --fg-disabled-subtle: 60, 85, 100;
+
+  /* Borders */
+  --border-primary: 40, 80, 100;
+  --border-brand: 15, 126, 168;
+  --border-brand-alt: 20, 150, 200;
+  --border-disabled: 40, 80, 100;
+  --border-error: 180, 35, 24;
+  --border-error-subtle: 120, 40, 35;
+
+  /* Shadcn / semantic tokens */
+  --background: #0d1f29;
+  --foreground: #e6f5fa;
+
+  --card: #122832;
+  --card-foreground: #e6f5fa;
+
+  --popover: #122832;
+  --popover-foreground: #e6f5fa;
+
+  --primary: #0f7ea8;
+  --primary-foreground: #ffffff;
+
+  --secondary: #12303c;
+  --secondary-foreground: #8ed0ec;
+
+  --muted: #163846;
+  --muted-foreground: #7aa6b8;
+
+  --accent: #164055;
+  --accent-foreground: #9bd8f0;
+
+  --border: #285066;
+  --input: #285066;
+  --ring: #4ba8cf;
+
+  /* Charts */
+  --chart-1: #4ba8cf;
+  --chart-2: #82c8e4;
+  --chart-3: #2d6276;
+  --chart-4: #a7ddf1;
+  --chart-5: #55849a;
+
+  /* Sidebar */
+  --sidebar: #0f2530;
+  --sidebar-foreground: #e6f5fa;
+  --sidebar-primary: #0f7ea8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #163846;
+  --sidebar-accent-foreground: #e6f5fa;
+  --sidebar-border: #285066;
+  --sidebar-ring: #4ba8cf;
+
+  /* Cards (custom) */
+  --external-app-card-background: #122832;
+  --external-app-card-border: #285066;
+  --external-app-card-title: #e6f5fa;
+  --external-app-card-logo: #8ed0ec;
+  --external-app-card-logo-placeholder: #6b9db2;
+  --external-app-card-hover-background: #163846;
+  --external-app-card-hover-border: #3a6f86;
+
+  --system-card-background: #122832;
+  --system-card-border: #0f7ea8;
+  --system-card-title: #8ed0ec;
+  --system-card-icon: #4ba8cf;
+  --system-card-arrow-border: #285066;
+  --system-card-arrow-icon: #8ed0ec;
+  --system-card-arrow-background: #0d1f29;
+  --system-card-hover-background: #163846;
+  --system-card-add-border: #285066;
+  --system-card-add-icon: #4ba8cf;
+
+  /* Footer */
+  --lms-bg-footer: #021f29;
 }

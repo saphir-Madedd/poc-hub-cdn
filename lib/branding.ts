@@ -1,4 +1,5 @@
-const CDN_BASE_URL = process.env.BRAND_CDN_BASE_URL ?? "https://cdn.example.com";
+const CDN_BASE_URL =
+  process.env.BRAND_CDN_BASE_URL ?? "https://cdn.example.com";
 const DEFAULT_CLIENT = "default";
 const THEME_FILE = process.env.BRAND_THEME_FILE ?? "theme.css";
 const LOGO_FILE = process.env.BRAND_LOGO_FILE ?? "logo.svg";
@@ -33,7 +34,9 @@ function getHostname(host: string | null | undefined) {
 }
 
 function normalizeDomainBrand(hostname: string) {
-  const domain = hostname.startsWith("www.") ? hostname.slice("www.".length) : hostname;
+  const domain = hostname.startsWith("www.")
+    ? hostname.slice("www.".length)
+    : hostname;
   return domain.split(".")[0] ?? DEFAULT_CLIENT;
 }
 
@@ -55,7 +58,12 @@ export function getClientFromHost(host: string | null | undefined) {
   const configuredClient = getConfiguredDomainClient(hostname);
   if (configuredClient) return configuredClient;
 
-  if (!hostname || hostname === "localhost" || hostname === "127.0.0.1" || hostname === "[::1]") {
+  if (
+    !hostname ||
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname === "[::1]"
+  ) {
     return DEFAULT_CLIENT;
   }
 
@@ -107,3 +115,19 @@ export function getLogoUrl({
 
   return `${CDN_BASE_URL}/brands/${client}/${sanitizeFileName(LOGO_FILE)}`;
 }
+
+export function getMediaUrl({
+  client,
+  host,
+}: {
+  client: string;
+  host: string | null | undefined;
+}) {
+  if (isLocalSimulationHost(host)) {
+    return `/brands/${client}/media.png`;
+  }
+
+  return `${CDN_BASE_URL}/brands/${client}/media.png`;
+}
+
+//TO DO : URL CONFIG FILE MARK= SUB -- domain

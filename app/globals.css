@@ -1,16 +1,37 @@
+@import "@jade-innovation/template-design/style.css";
+@source "../node_modules/@jade-innovation/template-design/dist/index.js";
+@source "../node_modules/@jade-innovation/template-design/dist";
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* 2. Ensure your custom hex colors are registered as theme variables if needed */
+@theme {
+  --color-sidebar-dark: #181d27;
+  --color-sidebar-text: #a0a6ad;
+}
+
+/* 3. Global fix for the height/border issues */
+@layer base {
+  :root {
+    --sidebar-width: 264px;
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-    --color-external-app-card-background: var(--external-app-card-background);
+  --color-external-app-card-background: var(--external-app-card-background);
   --color-external-app-card-border: var(--external-app-card-border);
   --color-external-app-card-title: var(--external-app-card-title);
   --color-external-app-card-logo: var(--external-app-card-logo);
-  --color-external-app-card-logo-placeholder: var(--external-app-card-logo-placeholder);
-  --color-external-app-card-hover-background: var(--external-app-card-hover-background);
+  --color-external-app-card-logo-placeholder: var(
+    --external-app-card-logo-placeholder
+  );
+  --color-external-app-card-hover-background: var(
+    --external-app-card-hover-background
+  );
   --color-external-app-card-hover-border: var(--external-app-card-hover-border);
   --color-system-card-background: var(--system-card-background);
   --color-system-card-border: var(--system-card-border);
@@ -20,6 +41,7 @@
   --color-system-card-arrow-icon: var(--system-card-arrow-icon);
   --color-system-card-arrow-background: var(--system-card-arrow-background);
   --color-system-card-hover-background: var(--system-card-hover-background);
+  --color-lms-bg-footer: var(--lms-bg-footer);
   --color-system-card-add-border: var(--system-card-add-border);
   --color-system-card-add-icon: var(--system-card-add-icon);
   --color-background: var(--background);
@@ -104,9 +126,9 @@
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f3f9e2;
   --sidebar-accent-foreground: #717680;
-  --sidebar-border: #E9EAEB;
+  --sidebar-border: #e9eaeb;
   --sidebar-ring: #b5d766;
-    --system-card-background: #ffffff;
+  --system-card-background: #ffffff;
   --system-card-border: #9bc844;
   --system-card-title: #7eac31;
   --system-card-icon: #699f11;
@@ -116,9 +138,8 @@
   --system-card-hover-background: #f8fde8;
   --system-card-add-border: #d4ee90;
   --system-card-add-icon: #699f11;
-
+  --lms-bg-footer: #e7e7e7;
 }
-
 
 .dark {
   --background: oklch(0.145 0 0);
