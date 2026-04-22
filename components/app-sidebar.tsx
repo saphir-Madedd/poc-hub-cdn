@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { HelpCircle, Home, Settings } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -24,7 +23,8 @@ export function AppSidebar({ client, logoUrl }: AppSidebarProps) {
     >
       <SidebarHeader className="flex items-center justify-center py-6">
         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary p-2">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element -- Logo URL is tenant-controlled from the CDN. */}
+          <img
             src={logoUrl}
             alt={`${client} logo`}
             width={32}
