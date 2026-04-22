@@ -1,7 +1,7 @@
 "use client";
 
 import { AppsCards } from "./apps-card";
-import DarkSwitcher from "./DarkSwitcher";
+import ThemeToggle from "./theme-toggle";
 import { SystemCards } from "./system-cards";
 import Image from "next/image";
 
@@ -26,8 +26,8 @@ export default function PageContainer({
   mediaUrl,
 }: PageContainerProps) {
   return (
-    <div className="flex flex-1 flex-col text-lms-text-brand-secondary items-center justify-center font-sans">
-      <DarkSwitcher />
+    <div className="flex max-w-360 mx-auto flex-1 flex-col text-lms-text-brand-secondary items-center justify-center font-sans">
+      <ThemeToggle />
       <section className="flex justify-between items-center w-full pt-30 pl-40 pr-20">
         <div className="w-135.75">
           <h1 className="font-bold  text-display-xl">
@@ -51,11 +51,11 @@ export default function PageContainer({
           <h3 className="mb-4 text-xl font-semibold text-primary">
             Session data
           </h3>
-          <pre className="whitespace-pre-wrap break-words text-sm text-black">
+          <pre className="whitespace-pre-wrap wrap-break-word text-sm text-black">
             {JSON.stringify(session, null, 2)}
           </pre>
         </div>
-        <div className="flex w-full flex-row bg-system-card-hover-background px-[6.25rem] py-[5.3125rem]">
+        <div className="flex w-full flex-row bg-system-card-hover-background px-25 py-21.25">
           <SystemCards />
         </div>
         <div className="mt-16 flex w-full flex-col items-center justify-center gap-16">

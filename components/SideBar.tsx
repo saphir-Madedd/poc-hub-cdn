@@ -3,7 +3,7 @@
 import { AppSidebar } from "@jade-innovation/template-design";
 import { Home, User } from "lucide-react";
 
-export default function SideBarTest({ logoUrl }: { logoUrl: string }) {
+export default function SideBar({ logoUrl }: { logoUrl: string }) {
   return (
     <div className="fixed top-4 left-5 z-40 ">
       <AppSidebar
